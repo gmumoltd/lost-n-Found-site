@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support — FindBack</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='28'>🔍</text></svg>" />
+  <style>
+    .support-hero {
+      padding: 120px 2rem 4rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .support-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 50% at 50% 30%, rgba(0,194,203,0.1) 0%, transparent 70%);
+    }
+    .support-hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; margin-bottom: 1rem; position: relative; }
+    .support-hero p { color: var(--slate-light); font-size: 1.05rem; max-width: 500px; margin: 0 auto 2.5rem; position: relative; }
+
+    .search-support {
+      max-width: 540px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .search-support input {
+      width: 100%;
+      padding: 1rem 1rem 1rem 3rem;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 50px;
+      color: var(--white);
+      font-size: 0.95rem;
+      outline: none;
+      transition: var(--transition);
+    }
+    .search-support input:focus { border-color: var(--teal); box-shadow: 0 0 0 4px var(--teal-glow); }
+    .search-support .icon { position: absolute; left: 16px; top: 50%; transform: translateY(-50%); font-size: 1.1rem; }
+
+    .support-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 3fr;
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem 5rem;
+    }
+
+    .faq-categories { display: flex; flex-direction: column; gap: 0.4rem; }
+
+    .faq-cat-btn {
+      padding: 0.7rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      background: transparent;
+      color: var(--slate-light);
+      font-size: 0.85rem;
+      cursor: pointer;
+      text-align: left;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .faq-cat-btn.active, .faq-cat-btn:hover {
+      background: var(--teal-glow);
+      border-color: var(--teal);
+      color: var(--teal);
+    }
+
+    .contact-cards { display: flex; flex-direction: column; gap: 0.75rem; }
+
+    .contact-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+      transition: var(--transition);
+    }
+
+    .contact-card:hover { border-color: var(--teal); }
+
+    .contact-card .icon { font-size: 1.5rem; margin-bottom: 0.5rem; display: block; }
+    .contact-card h4 { font-size: 0.9rem; font-weight: 600; margin-bottom: 0.25rem; }
+    .contact-card p { font-size: 0.78rem; color: var(--slate-light); margin-bottom: 0.75rem; }
+    .contact-card a {
+      font-size: 0.78rem;
+      color: var(--teal);
+      font-weight: 600;
+    }
+
+    .faq-list { display: flex; flex-direction: column; gap: 0.75rem; }
+
+    .faq-item {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: var(--transition);
+    }
+
+    .faq-item:hover { border-color: var(--border-hover); }
+    .faq-item.open { border-color: var(--teal); }
+
+    .faq-q {
+      width: 100%;
+      padding: 1.1rem 1.25rem;
+      background: none;
+      border: none;
+      color: var(--white);
+      font-size: 0.92rem;
+      font-weight: 600;
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      font-family: var(--font-body);
+    }
+
+    .faq-q .chevron {
+      width: 20px; height: 20px;
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      flex-shrink: 0;
+      transition: transform 0.3s ease;
+    }
+
+    .faq-item.open .faq-q .chevron { transform: rotate(180deg); border-color: var(--teal); color: var(--teal); }
+
+    .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.2s;
+    }
+
+    .faq-a-inner {
+      padding: 0 1.25rem 1.1rem;
+      font-size: 0.87rem;
+      color: var(--slate-light);
+      line-height: 1.7;
+      border-top: 1px solid var(--border);
+      padding-top: 1rem;
+    }
+
+    .faq-item.open .faq-a { max-height: 500px; }
+
+    @media (max-width: 900px) {
+      .support-grid { grid-template-columns: 1fr; }
+      .faq-categories { flex-direction: row; flex-wrap: wrap; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAVBAR ─────────────────────────────────── -->
+<nav class="navbar" id="navbar">
+  <a href="index.html" class="nav-brand">
+    <div class="brand-icon">🔍</div>
+    Find<span class="accent">Back</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#search">Search Items</a></li>
+    <li><a href="index.html#institutions">Institutions</a></li>
+    <li><a href="index.html#plans">Pricing</a></li>
+    <li><a href="support.html" class="active">Support</a></li>
+  </ul>
+  <div class="nav-cta">
+    <a href="login.html" class="btn-ghost">Sign In</a>
+    <a href="register.html" class="btn-primary">Get Started</a>
+  </div>
+  <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a>
+  <a href="index.html#institutions">Institutions</a>
+  <a href="index.html#plans">Pricing</a>
+  <a href="support.html">Support</a>
+  <div class="mobile-menu-cta">
+    <a href="login.html" class="btn-ghost">Sign In</a>
+    <a href="register.html" class="btn-primary">Get Started</a>
+  </div>
+</div>
+
+<!-- ── SUPPORT HERO ────────────────────────────── -->
+<section class="support-hero">
+  <h1>How can we help you? 👋</h1>
+  <p>Search our knowledge base or reach out — our team is standing by to help you recover what matters most.</p>
+
+  <div class="search-support">
+    <span class="icon">🔍</span>
+    <input type="text" placeholder="Search: how to report, track item, institution setup…" />
+  </div>
+</section>
+
+<!-- ── SUPPORT CONTENT ─────────────────────────── -->
+<div class="support-grid">
+
+  <!-- Categories -->
+  <div>
+    <p class="section-label" style="margin-bottom:1rem;">Categories</p>
+    <div class="faq-categories">
+      <button class="faq-cat-btn active">🚀 Getting Started</button>
+      <button class="faq-cat-btn">📦 Lost & Found</button>
+      <button class="faq-cat-btn">🏛 Institutions</button>
+      <button class="faq-cat-btn">💳 Billing & Plans</button>
+      <button class="faq-cat-btn">🔒 Account & Security</button>
+      <button class="faq-cat-btn">🤖 AI Matching</button>
+    </div>
+  </div>
+
+  <!-- Contact Cards -->
+  <div>
+    <p class="section-label" style="margin-bottom:1rem;">Contact Us</p>
+    <div class="contact-cards">
+      <div class="contact-card">
+        <span class="icon">💬</span>
+        <h4>Live Chat</h4>
+        <p>Chat with FindBot or a human agent right now.</p>
+        <a href="#" onclick="document.getElementById('chatbotTrigger').click(); return false;">Open Chat →</a>
+      </div>
+      <div class="contact-card">
+        <span class="icon">✉️</span>
+        <h4>Email Support</h4>
+        <p>We respond within 4 business hours.</p>
+        <a href="mailto:support@findback.co.ke">support@findback.co.ke</a>
+      </div>
+      <div class="contact-card">
+        <span class="icon">📞</span>
+        <h4>Phone Support</h4>
+        <p>Mon–Fri, 8am–6pm EAT</p>
+        <a href="tel:+254700000000">+254 700 000 000</a>
+      </div>
+      <div class="contact-card">
+        <span class="icon">🏢</span>
+        <h4>Enterprise Sales</h4>
+        <p>Custom plans for large institutions.</p>
+        <a href="mailto:sales@findback.co.ke">sales@findback.co.ke</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ List -->
+  <div>
+    <p class="section-label" style="margin-bottom:1rem;">Frequently Asked Questions</p>
+    <div class="faq-list">
+
+      <div class="faq-item open">
+        <button class="faq-q">
+          How do I report a lost item?
+          <span class="chevron">▼</span>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">
+            After signing in, click <strong>Report Lost Item</strong> from your dashboard or the homepage. Fill in a detailed description including colour, brand, size, and any unique markings. Upload a photo if you have one — this significantly improves our AI matching speed. Select the location and date last seen, then submit. You'll receive a confirmation email and real-time alerts when a match is found.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          How does the AI matching work?
+          <span class="chevron">▼</span>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">
+            FindBack's AI analyses text descriptions, uploaded images, location data, and time patterns to compare your lost item report against all found item reports. It uses computer vision to match visual features and natural language processing to understand descriptions, achieving a 98% match accuracy rate. You receive a confidence score with every match suggestion.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          How do institutions subscribe?
+          <span class="chevron">▼</span>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">
+            Institutions can register by clicking <strong>Create Account</strong> and selecting the <strong>Institution</strong> tab. Choose your institution type (university, hospital, airport etc.), select a subscription plan, and complete the verification steps. Once approved, your institution gets a dedicated dashboard, staff management portal, and a customised lost & found queue for your members and visitors.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          Can non-members access an institution's portal?
+          <span class="chevron">▼</span>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">
+            Yes! Institution portals support two access tiers: <strong>staff</strong> (who manage the queue and verify claims) and <strong>public visitors</strong> (who can submit found/lost reports using institution-specific credentials provided at the front desk). Institutions can also generate temporary access links for visitors.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          How do I claim an item I believe is mine?
+          <span class="chevron">▼</span>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">
+            When AI flags a potential match, you'll get an alert. Review the found item details and click <strong>Claim This Item</strong>. You'll be asked to provide ownership proof such as a serial number, receipt, or a unique identifier. The institution or finder reviews your claim — usually within 24 hours. Once approved, you arrange pickup through the platform's secure messaging system.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          Is my personal data safe?
+          <span class="chevron">▼</span>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">
+            Absolutely. FindBack uses 256-bit AES encryption for all stored data and TLS 1.3 for data in transit. We are fully compliant with Kenya's Data Protection Act 2019. Your personal information is never sold to third parties. You can request a full data export or account deletion at any time from your profile settings.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          What's included in the Free plan?
+          <span class="chevron">▼</span>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">
+            The Free plan includes up to 5 item reports per month, basic AI matching, email alerts, and access to the public item search database. It's ideal for individuals who occasionally need to track lost personal belongings. For institutions or frequent users, our Standard and Premium plans offer unlimited reports, SMS alerts, staff portals, and advanced analytics.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">
+          Can I use FindBack without creating an account?
+          <span class="chevron">▼</span>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">
+            You can browse the public search database without an account. However, reporting items, receiving AI match alerts, and claiming found belongings all require a free registered account. Registration takes under two minutes and gives you access to the full platform.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ── FOOTER ─────────────────────────────────── -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="nav-brand" style="justify-content:flex-start;">
+          <div class="brand-icon">🔍</div>
+          Find<span class="accent">Back</span>
+        </div>
+        <p>AI-powered lost & found — connecting people with their belongings.</p>
+        <div class="footer-social">
+          <a class="social-icon">𝕏</a>
+          <a class="social-icon">in</a>
+          <a class="social-icon">f</a>
+          <a class="social-icon">📷</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Platform</h5>
+        <ul>
+          <li><a href="#">Search Items</a></li>
+          <li><a href="#">Report Lost</a></li>
+          <li><a href="#">Institutions</a></li>
+          <li><a href="#">Pricing</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Legal</h5>
+        <ul>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Cookie Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="mailto:support@findback.co.ke">support@findback.co.ke</a></li>
+          <li><a href="tel:+254700000000">+254 700 000 000</a></li>
+          <li><a href="#">Nairobi, Kenya</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 FindBack Technologies. All rights reserved.</span>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy</a><a href="#">Terms</a><a href="#">Cookies</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ── CHATBOT ─────────────────────────────────── -->
+<button class="chatbot-trigger" id="chatbotTrigger" aria-label="Open chat assistant">
+  💬
+  <div class="chat-badge">1</div>
+</button>
+
+<div class="chatbot-window" id="chatbotWindow">
+  <div class="chat-header">
+    <div class="chat-avatar">🤖</div>
+    <div class="chat-header-info">
+      <h4>FindBot Assistant</h4>
+      <span>Online · Here to help</span>
+    </div>
+    <button class="chat-close" id="chatClose">✕</button>
+  </div>
+  <div class="chat-messages" id="chatMessages"></div>
+  <div class="chat-quick-replies">
+    <button class="quick-reply">How to register</button>
+    <button class="quick-reply">Report lost item</button>
+    <button class="quick-reply">Retrieve my item</button>
+    <button class="quick-reply">Institution plans</button>
+  </div>
+  <div class="chat-input-row">
+    <input type="text" class="chat-input" id="chatInput" placeholder="Ask me anything…" />
+    <button class="chat-send" id="chatSend">➤</button>
+  </div>
+</div>
+
+<div class="toast-container" id="toastContainer"></div>
+
+<script src="main.js"></script>
+<script>
+  // FAQ Accordion
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+
+  // Category filter buttons
+  document.querySelectorAll('.faq-cat-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.faq-cat-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>
