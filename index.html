@@ -1,159 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FindBack — AI-Powered Lost & Found Platform</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='28'>🔍</text></svg>" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FindBack — AI-Powered Lost & Found Platform</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='28'>🔍</text></svg>" />
 </head>
+
 <body>
 
-<!-- ── NAVBAR ─────────────────────────────────── -->
-<nav class="navbar" id="navbar">
-  <a href="index.html" class="nav-brand">
-    <div class="brand-icon">🔍</div>
-    Find<span class="accent">Back</span>
-  </a>
+    <!-- ── NAVBAR ─────────────────────────────────── -->
+    <nav class="navbar" id="navbar">
+        <a href="index.html" class="nav-brand">
+            <div class="brand-icon">🔍</div>
+            Find<span class="accent">Back</span>
+        </a>
 
-  <ul class="nav-links">
-    <li><a href="#search" class="active">Search Items</a></li>
-    <li><a href="#institutions">Institutions</a></li>
-    <li><a href="#plans">Pricing</a></li>
-    <li><a href="#how">How It Works</a></li>
-    <li><a href="support.html">Support</a></li>
-  </ul>
+        <ul class="nav-links">
+            <li><a href="#search" class="active">Search Items</a></li>
+            <li><a href="#institutions">Institutions</a></li>
+            <li><a href="#plans">Pricing</a></li>
+            <li><a href="#how">How It Works</a></li>
+            <li><a href="support.html">Support</a></li>
+        </ul>
 
-  <div class="nav-cta">
-    <a href="login.html" class="btn-ghost">Sign In</a>
-    <a href="register.html" class="btn-primary">Get Started Free</a>
-  </div>
+        <div class="nav-cta">
+            <a href="login.html" class="btn-ghost">Sign In</a>
+            <a href="register.html" class="btn-primary">Get Started Free</a>
+        </div>
 
-  <button class="hamburger" id="hamburger" aria-label="Menu">
+        <button class="hamburger" id="hamburger" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
-</nav>
+    </nav>
 
-<!-- Mobile Menu -->
-<div class="mobile-menu" id="mobileMenu">
-  <a href="#search">Search Items</a>
-  <a href="#institutions">Institutions</a>
-  <a href="#plans">Pricing</a>
-  <a href="#how">How It Works</a>
-  <a href="support.html">Support</a>
-  <div class="mobile-menu-cta">
-    <a href="login.html" class="btn-ghost">Sign In</a>
-    <a href="register.html" class="btn-primary">Get Started</a>
-  </div>
-</div>
-
-<!-- ── HERO ───────────────────────────────────── -->
-<section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-grid-lines"></div>
-
-  <div class="hero-content">
-    <!-- Left: Text -->
-    <div class="hero-text">
-      <div class="hero-badge">
-        <div class="dot"></div>
-        AI-Powered Matching
-      </div>
-
-      <h1 class="hero-title">
-        Reunite People<br>with Their <span class="highlight">Lost Items</span>
-      </h1>
-
-      <p class="hero-desc">
-        FindBack uses advanced AI to match lost items with found reports across universities, hospitals, airports, malls, and more — fast, smart, and reliable.
-      </p>
-
-      <div class="hero-actions">
-        <a href="register.html" class="btn-primary btn-large">🚀 Get Started Free</a>
-        <a href="#how" class="btn-outline">See How It Works</a>
-      </div>
-
-      <div class="hero-stats">
-        <div class="stat">
-          <div class="stat-value"><span data-count="12400">0</span>+</div>
-          <div class="stat-label">Items Reunited</div>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#search">Search Items</a>
+        <a href="#institutions">Institutions</a>
+        <a href="#plans">Pricing</a>
+        <a href="#how">How It Works</a>
+        <a href="support.html">Support</a>
+        <div class="mobile-menu-cta">
+            <a href="login.html" class="btn-ghost">Sign In</a>
+            <a href="register.html" class="btn-primary">Get Started</a>
         </div>
-        <div class="stat">
-          <div class="stat-value"><span data-count="340">0</span>+</div>
-          <div class="stat-label">Institutions</div>
-        </div>
-        <div class="stat">
-          <div class="stat-value"><span data-count="98">0</span>%</div>
-          <div class="stat-label">Match Accuracy</div>
-        </div>
-      </div>
     </div>
 
-    <!-- Right: Radar Visual -->
-    <div class="hero-visual">
-      <div class="radar-wrap">
-        <div class="radar-ring"></div>
-        <div class="radar-ring"></div>
-        <div class="radar-ring"></div>
+    <!-- ── HERO ───────────────────────────────────── -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-grid-lines"></div>
 
-        <div class="radar-center">🔍</div>
+        <div class="hero-content">
+            <!-- Left: Text -->
+            <div class="hero-text">
+                <div class="hero-badge">
+                    <div class="dot"></div>
+                    AI-Powered Matching
+                </div>
 
-        <!-- Floating Cards -->
-        <div class="floating-card">
-          <div class="card-icon">💼</div>
-          <div class="card-text">
-            <strong>Black Briefcase</strong>
-            <span>Matched — 97% confidence</span>
-          </div>
-          <div class="card-status found"></div>
+                <h1 class="hero-title">
+                    Reunite People<br>with Their <span class="highlight">Lost Items</span>
+                </h1>
+
+                <p class="hero-desc">
+                    FindBack uses advanced AI to match lost items with found reports across universities, hospitals, airports, malls, and more — fast, smart, and reliable.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="register.html" class="btn-primary btn-large">🚀 Get Started Free</a>
+                    <a href="#how" class="btn-outline">See How It Works</a>
+                </div>
+
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-value"><span data-count="12400">0</span>+</div>
+                        <div class="stat-label">Items Reunited</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value"><span data-count="340">0</span>+</div>
+                        <div class="stat-label">Institutions</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value"><span data-count="98">0</span>%</div>
+                        <div class="stat-label">Match Accuracy</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Radar Visual -->
+            <div class="hero-visual">
+                <div class="radar-wrap">
+                    <div class="radar-ring"></div>
+                    <div class="radar-ring"></div>
+                    <div class="radar-ring"></div>
+
+                    <div class="radar-center">🔍</div>
+
+                    <!-- Floating Cards -->
+                    <div class="floating-card">
+                        <div class="card-icon">💼</div>
+                        <div class="card-text">
+                            <strong>Black Briefcase</strong>
+                            <span>Matched — 97% confidence</span>
+                        </div>
+                        <div class="card-status found"></div>
+                    </div>
+
+                    <div class="floating-card">
+                        <div class="card-icon">🎒</div>
+                        <div class="card-text">
+                            <strong>Blue Backpack</strong>
+                            <span>Reported · Nairobi Airport</span>
+                        </div>
+                        <div class="card-status lost"></div>
+                    </div>
+
+                    <div class="floating-card">
+                        <div class="card-icon">📱</div>
+                        <div class="card-text">
+                            <strong>iPhone 15 Pro</strong>
+                            <span>Found · KU Main Campus</span>
+                        </div>
+                        <div class="card-status found"></div>
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="floating-card">
-          <div class="card-icon">🎒</div>
-          <div class="card-text">
-            <strong>Blue Backpack</strong>
-            <span>Reported · Nairobi Airport</span>
-          </div>
-          <div class="card-status lost"></div>
-        </div>
+    <!-- ── QUICK SEARCH ────────────────────────────── -->
+    <section class="search-section" id="search">
+        <div class="search-container">
+            <div class="search-tabs">
+                <button class="search-tab active">🔎 Search Lost Items</button>
+                <button class="search-tab">📋 Search Found Items</button>
+                <button class="search-tab">📝 Report Lost</button>
+                <button class="search-tab">📦 Report Found</button>
+            </div>
 
-        <div class="floating-card">
-          <div class="card-icon">📱</div>
-          <div class="card-text">
-            <strong>iPhone 15 Pro</strong>
-            <span>Found · KU Main Campus</span>
-          </div>
-          <div class="card-status found"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+            <div class="search-row">
+                <div class="search-field">
+                    <label>Describe the Item</label>
+                    <div class="search-input-wrap">
+                        <span class="icon">🔍</span>
+                        <input type="text" placeholder="e.g. black leather wallet, iPhone, blue backpack…" />
+                    </div>
+                </div>
 
-<!-- ── QUICK SEARCH ────────────────────────────── -->
-<section class="search-section" id="search">
-  <div class="search-container">
-    <div class="search-tabs">
-      <button class="search-tab active">🔎 Search Lost Items</button>
-      <button class="search-tab">📋 Search Found Items</button>
-      <button class="search-tab">📝 Report Lost</button>
-      <button class="search-tab">📦 Report Found</button>
-    </div>
-
-    <div class="search-row">
-      <div class="search-field">
-        <label>Describe the Item</label>
-        <div class="search-input-wrap">
-          <span class="icon">🔍</span>
-          <input type="text" placeholder="e.g. black leather wallet, iPhone, blue backpack…" />
-        </div>
-      </div>
-
-      <div class="search-field">
-        <label>Location / Institution</label>
-        <div class="search-input-wrap">
-          <span class="icon">📍</span>
-          <select>
+                <div class="search-field">
+                    <label>Location / Institution</label>
+                    <div class="search-input-wrap">
+                        <span class="icon">📍</span>
+                        <select>
             <option value="">All Locations</option>
             <optgroup label="Universities">
               <option>University of Nairobi</option>
@@ -174,318 +176,319 @@
               <option>Westgate Mall</option>
             </optgroup>
           </select>
+                    </div>
+                </div>
+
+                <button class="btn-primary btn-large" onclick="showToast('AI matching in progress…', 'info')">Search Now</button>
+            </div>
         </div>
-      </div>
+    </section>
 
-      <button class="btn-primary btn-large" onclick="showToast('AI matching in progress…', 'info')">Search Now</button>
-    </div>
-  </div>
-</section>
+    <!-- ── HOW IT WORKS ────────────────────────────── -->
+    <section class="section" id="how">
+        <div class="section-inner">
+            <div class="section-label">How It Works</div>
+            <h2 class="section-title">Three steps to get<br>your item back</h2>
+            <p class="section-desc">Our AI does the heavy lifting — matching descriptions, images, and locations at lightning speed.</p>
 
-<!-- ── HOW IT WORKS ────────────────────────────── -->
-<section class="section" id="how">
-  <div class="section-inner">
-    <div class="section-label">How It Works</div>
-    <h2 class="section-title">Three steps to get<br>your item back</h2>
-    <p class="section-desc">Our AI does the heavy lifting — matching descriptions, images, and locations at lightning speed.</p>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-num">01</div>
+                    <div class="step-icon">📝</div>
+                    <h3>Report or Search</h3>
+                    <p>Submit a detailed description of your lost item, or search our database of found items. Add photos to supercharge AI matching.</p>
+                </div>
 
-    <div class="steps-grid">
-      <div class="step-card">
-        <div class="step-num">01</div>
-        <div class="step-icon">📝</div>
-        <h3>Report or Search</h3>
-        <p>Submit a detailed description of your lost item, or search our database of found items. Add photos to supercharge AI matching.</p>
-      </div>
+                <div class="step-card">
+                    <div class="step-num">02</div>
+                    <div class="step-icon">🤖</div>
+                    <h3>AI Matches & Alerts</h3>
+                    <p>Our AI analyses colour, size, brand, and location patterns across all reports, sending you real-time alerts when a match is found.</p>
+                </div>
 
-      <div class="step-card">
-        <div class="step-num">02</div>
-        <div class="step-icon">🤖</div>
-        <h3>AI Matches & Alerts</h3>
-        <p>Our AI analyses colour, size, brand, and location patterns across all reports, sending you real-time alerts when a match is found.</p>
-      </div>
-
-      <div class="step-card">
-        <div class="step-num">03</div>
-        <div class="step-icon">🤝</div>
-        <h3>Claim & Retrieve</h3>
-        <p>Verify ownership securely through our claims portal. Coordinate pickup directly with the institution or finder. Done!</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── INSTITUTIONS ────────────────────────────── -->
-<section class="institutions-section" id="institutions">
-  <div class="section-inner">
-    <div class="section-label">For Institutions</div>
-    <h2 class="section-title">Built for every<br>kind of organisation</h2>
-    <p class="section-desc">From campuses to airports, FindBack gives your team a smart, centralised lost & found desk.</p>
-
-    <div class="inst-grid">
-      <div class="inst-card">
-        <div class="inst-icon">🎓</div>
-        <h4>Universities</h4>
-        <p>Campus-wide coverage</p>
-      </div>
-      <div class="inst-card">
-        <div class="inst-icon">🏫</div>
-        <h4>Schools</h4>
-        <p>Student item tracking</p>
-      </div>
-      <div class="inst-card">
-        <div class="inst-icon">🏥</div>
-        <h4>Hospitals</h4>
-        <p>Patient belongings</p>
-      </div>
-      <div class="inst-card">
-        <div class="inst-icon">✈️</div>
-        <h4>Airports</h4>
-        <p>Baggage & terminal</p>
-      </div>
-      <div class="inst-card">
-        <div class="inst-icon">🏨</div>
-        <h4>Hotels</h4>
-        <p>Guest item recovery</p>
-      </div>
-      <div class="inst-card">
-        <div class="inst-icon">🚌</div>
-        <h4>Transport</h4>
-        <p>Bus & train networks</p>
-      </div>
-      <div class="inst-card">
-        <div class="inst-icon">🛍️</div>
-        <h4>Malls</h4>
-        <p>Retail lost & found</p>
-      </div>
-      <div class="inst-card">
-        <div class="inst-icon">🏢</div>
-        <h4>Corporate</h4>
-        <p>Office asset tracking</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── PRICING ─────────────────────────────────── -->
-<section class="section" id="plans">
-  <div class="section-inner">
-    <div class="section-label">Subscription Plans</div>
-    <h2 class="section-title">Simple, transparent<br>pricing</h2>
-    <p class="section-desc">Start free, scale when you need it. Every plan includes AI matching and real-time alerts.</p>
-
-    <div class="plans-grid">
-      <!-- Free -->
-      <div class="plan-card">
-        <div class="plan-name">Free</div>
-        <div class="plan-price">KES 0<span>/mo</span></div>
-        <div class="plan-desc">Perfect for individuals searching for personal items.</div>
-        <ul class="plan-features">
-          <li>5 reports/month</li>
-          <li>Basic AI matching</li>
-          <li>Email alerts</li>
-          <li>Public item search</li>
-        </ul>
-        <a href="register.html" class="plan-cta btn-ghost">Get Started</a>
-      </div>
-
-      <!-- Standard -->
-      <div class="plan-card">
-        <div class="plan-name">Standard</div>
-        <div class="plan-price"><sup>KES</sup>4,500<span>/mo</span></div>
-        <div class="plan-desc">For small institutions and schools with growing needs.</div>
-        <ul class="plan-features">
-          <li>100 reports/month</li>
-          <li>Advanced AI matching</li>
-          <li>SMS + email alerts</li>
-          <li>Staff portal (5 seats)</li>
-          <li>Basic analytics</li>
-        </ul>
-        <a href="register.html" class="plan-cta btn-primary">Start Free Trial</a>
-      </div>
-
-      <!-- Premium (featured) -->
-      <div class="plan-card featured">
-        <div class="plan-badge">Most Popular</div>
-        <div class="plan-name">Premium</div>
-        <div class="plan-price"><sup>KES</sup>12,000<span>/mo</span></div>
-        <div class="plan-desc">For universities, hospitals, and airports that need full power.</div>
-        <ul class="plan-features">
-          <li>Unlimited reports</li>
-          <li>Priority AI matching</li>
-          <li>SMS, email & push alerts</li>
-          <li>Staff portal (unlimited)</li>
-          <li>Full analytics & reports</li>
-          <li>Claims management</li>
-        </ul>
-        <a href="register.html" class="plan-cta btn-primary">Start Free Trial</a>
-      </div>
-
-      <!-- Enterprise -->
-      <div class="plan-card">
-        <div class="plan-name">Enterprise</div>
-        <div class="plan-price">Custom</div>
-        <div class="plan-desc">For multi-branch networks, airport groups, and transport authorities.</div>
-        <ul class="plan-features">
-          <li>Everything in Premium</li>
-          <li>Multi-branch management</li>
-          <li>White-label branding</li>
-          <li>Dedicated account manager</li>
-          <li>SLA guarantees</li>
-          <li>API access</li>
-        </ul>
-        <a href="support.html" class="plan-cta btn-amber btn-primary">Contact Sales</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── DASHBOARD PREVIEW ───────────────────────── -->
-<section class="dashboard-preview">
-  <div class="section-inner">
-    <div class="section-label">Dashboards</div>
-    <h2 class="section-title">Everything in one place</h2>
-
-    <div class="dashboard-tabs">
-      <button class="dash-tab active">User View</button>
-      <button class="dash-tab">Institution View</button>
-      <button class="dash-tab">Admin View</button>
-    </div>
-
-    <div class="dash-grid">
-      <div class="dash-stat">
-        <div class="dash-stat-icon teal">🔍</div>
-        <div>
-          <div class="dash-stat-value">24</div>
-          <div class="dash-stat-label">Active Reports</div>
-          <div class="dash-stat-change">↑ 3 this week</div>
+                <div class="step-card">
+                    <div class="step-num">03</div>
+                    <div class="step-icon">🤝</div>
+                    <h3>Claim & Retrieve</h3>
+                    <p>Verify ownership securely through our claims portal. Coordinate pickup directly with the institution or finder. Done!</p>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="dash-stat">
-        <div class="dash-stat-icon success">✅</div>
-        <div>
-          <div class="dash-stat-value">8</div>
-          <div class="dash-stat-label">Items Reunited</div>
-          <div class="dash-stat-change">↑ 2 this month</div>
+    </section>
+
+    <!-- ── INSTITUTIONS ────────────────────────────── -->
+    <section class="institutions-section" id="institutions">
+        <div class="section-inner">
+            <div class="section-label">For Institutions</div>
+            <h2 class="section-title">Built for every<br>kind of organisation</h2>
+            <p class="section-desc">From campuses to airports, FindBack gives your team a smart, centralised lost & found desk.</p>
+
+            <div class="inst-grid">
+                <div class="inst-card">
+                    <div class="inst-icon">🎓</div>
+                    <h4>Universities</h4>
+                    <p>Campus-wide coverage</p>
+                </div>
+                <div class="inst-card">
+                    <div class="inst-icon">🏫</div>
+                    <h4>Schools</h4>
+                    <p>Student item tracking</p>
+                </div>
+                <div class="inst-card">
+                    <div class="inst-icon">🏥</div>
+                    <h4>Hospitals</h4>
+                    <p>Patient belongings</p>
+                </div>
+                <div class="inst-card">
+                    <div class="inst-icon">✈️</div>
+                    <h4>Airports</h4>
+                    <p>Baggage & terminal</p>
+                </div>
+                <div class="inst-card">
+                    <div class="inst-icon">🏨</div>
+                    <h4>Hotels</h4>
+                    <p>Guest item recovery</p>
+                </div>
+                <div class="inst-card">
+                    <div class="inst-icon">🚌</div>
+                    <h4>Transport</h4>
+                    <p>Bus & train networks</p>
+                </div>
+                <div class="inst-card">
+                    <div class="inst-icon">🛍️</div>
+                    <h4>Malls</h4>
+                    <p>Retail lost & found</p>
+                </div>
+                <div class="inst-card">
+                    <div class="inst-icon">🏢</div>
+                    <h4>Corporate</h4>
+                    <p>Office asset tracking</p>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="dash-stat">
-        <div class="dash-stat-icon amber">⏳</div>
-        <div>
-          <div class="dash-stat-value">3</div>
-          <div class="dash-stat-label">Pending Claims</div>
-          <div class="dash-stat-change">Action needed</div>
+    </section>
+
+    <!-- ── PRICING ─────────────────────────────────── -->
+    <section class="section" id="plans">
+        <div class="section-inner">
+            <div class="section-label">Subscription Plans</div>
+            <h2 class="section-title">Simple, transparent<br>pricing</h2>
+            <p class="section-desc">Start free, scale when you need it. Every plan includes AI matching and real-time alerts.</p>
+
+            <div class="plans-grid">
+                <!-- Free -->
+                <div class="plan-card">
+                    <div class="plan-name">Free</div>
+                    <div class="plan-price">KES 0<span>/mo</span></div>
+                    <div class="plan-desc">Perfect for individuals searching for personal items.</div>
+                    <ul class="plan-features">
+                        <li>5 reports/month</li>
+                        <li>Basic AI matching</li>
+                        <li>Email alerts</li>
+                        <li>Public item search</li>
+                    </ul>
+                    <a href="register.html" class="plan-cta btn-ghost">Get Started</a>
+                </div>
+
+                <!-- Standard -->
+                <div class="plan-card">
+                    <div class="plan-name">Standard</div>
+                    <div class="plan-price"><sup>KES</sup>4,500<span>/mo</span></div>
+                    <div class="plan-desc">For small institutions and schools with growing needs.</div>
+                    <ul class="plan-features">
+                        <li>100 reports/month</li>
+                        <li>Advanced AI matching</li>
+                        <li>SMS + email alerts</li>
+                        <li>Staff portal (5 seats)</li>
+                        <li>Basic analytics</li>
+                    </ul>
+                    <a href="register.html" class="plan-cta btn-primary">Start Free Trial</a>
+                </div>
+
+                <!-- Premium (featured) -->
+                <div class="plan-card featured">
+                    <div class="plan-badge">Most Popular</div>
+                    <div class="plan-name">Premium</div>
+                    <div class="plan-price"><sup>KES</sup>12,000<span>/mo</span></div>
+                    <div class="plan-desc">For universities, hospitals, and airports that need full power.</div>
+                    <ul class="plan-features">
+                        <li>Unlimited reports</li>
+                        <li>Priority AI matching</li>
+                        <li>SMS, email & push alerts</li>
+                        <li>Staff portal (unlimited)</li>
+                        <li>Full analytics & reports</li>
+                        <li>Claims management</li>
+                    </ul>
+                    <a href="register.html" class="plan-cta btn-primary">Start Free Trial</a>
+                </div>
+
+                <!-- Enterprise -->
+                <div class="plan-card">
+                    <div class="plan-name">Enterprise</div>
+                    <div class="plan-price">Custom</div>
+                    <div class="plan-desc">For multi-branch networks, airport groups, and transport authorities.</div>
+                    <ul class="plan-features">
+                        <li>Everything in Premium</li>
+                        <li>Multi-branch management</li>
+                        <li>White-label branding</li>
+                        <li>Dedicated account manager</li>
+                        <li>SLA guarantees</li>
+                        <li>API access</li>
+                    </ul>
+                    <a href="support.html" class="plan-cta btn-amber btn-primary">Contact Sales</a>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="dash-stat">
-        <div class="dash-stat-icon red">🤖</div>
-        <div>
-          <div class="dash-stat-value">97%</div>
-          <div class="dash-stat-label">AI Match Rate</div>
-          <div class="dash-stat-change">Above average</div>
+    </section>
+
+    <!-- ── DASHBOARD PREVIEW ───────────────────────── -->
+    <section class="dashboard-preview">
+        <div class="section-inner">
+            <div class="section-label">Dashboards</div>
+            <h2 class="section-title">Everything in one place</h2>
+
+            <div class="dashboard-tabs">
+                <button class="dash-tab active">User View</button>
+                <button class="dash-tab">Institution View</button>
+                <button class="dash-tab">Admin View</button>
+            </div>
+
+            <div class="dash-grid">
+                <div class="dash-stat">
+                    <div class="dash-stat-icon teal">🔍</div>
+                    <div>
+                        <div class="dash-stat-value">24</div>
+                        <div class="dash-stat-label">Active Reports</div>
+                        <div class="dash-stat-change">↑ 3 this week</div>
+                    </div>
+                </div>
+                <div class="dash-stat">
+                    <div class="dash-stat-icon success">✅</div>
+                    <div>
+                        <div class="dash-stat-value">8</div>
+                        <div class="dash-stat-label">Items Reunited</div>
+                        <div class="dash-stat-change">↑ 2 this month</div>
+                    </div>
+                </div>
+                <div class="dash-stat">
+                    <div class="dash-stat-icon amber">⏳</div>
+                    <div>
+                        <div class="dash-stat-value">3</div>
+                        <div class="dash-stat-label">Pending Claims</div>
+                        <div class="dash-stat-change">Action needed</div>
+                    </div>
+                </div>
+                <div class="dash-stat">
+                    <div class="dash-stat-icon red">🤖</div>
+                    <div>
+                        <div class="dash-stat-value">97%</div>
+                        <div class="dash-stat-label">AI Match Rate</div>
+                        <div class="dash-stat-change">Above average</div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align:center; margin-top: 2rem;">
+                <a href="register.html" class="btn-primary btn-large">Access Your Dashboard →</a>
+            </div>
         </div>
-      </div>
-    </div>
+    </section>
 
-    <div style="text-align:center; margin-top: 2rem;">
-      <a href="register.html" class="btn-primary btn-large">Access Your Dashboard →</a>
-    </div>
-  </div>
-</section>
+    <!-- ── FOOTER ─────────────────────────────────── -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="nav-brand" style="justify-content:flex-start;">
+                        <div class="brand-icon">🔍</div>
+                        Find<span class="accent">Back</span>
+                    </div>
+                    <p>AI-powered lost & found — connecting people with their belongings across institutions, campuses, and public spaces.</p>
+                    <div class="footer-social">
+                        <a class="social-icon">𝕏</a>
+                        <a class="social-icon">in</a>
+                        <a class="social-icon">f</a>
+                        <a class="social-icon">📷</a>
+                    </div>
+                </div>
 
-<!-- ── FOOTER ─────────────────────────────────── -->
-<footer class="footer">
-  <div class="footer-inner">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <div class="nav-brand" style="justify-content:flex-start;">
-          <div class="brand-icon">🔍</div>
-          Find<span class="accent">Back</span>
+                <div class="footer-col">
+                    <h5>Platform</h5>
+                    <ul>
+                        <li><a href="#">Search Items</a></li>
+                        <li><a href="#">Report Lost</a></li>
+                        <li><a href="#">Report Found</a></li>
+                        <li><a href="#">Institutions</a></li>
+                        <li><a href="#">Pricing</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h5>Company</h5>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h5>Support</h5>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <span>© 2025 FindBack Technologies. All rights reserved.</span>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
+                    <a href="#">Cookies</a>
+                </div>
+            </div>
         </div>
-        <p>AI-powered lost & found — connecting people with their belongings across institutions, campuses, and public spaces.</p>
-        <div class="footer-social">
-          <a class="social-icon">𝕏</a>
-          <a class="social-icon">in</a>
-          <a class="social-icon">f</a>
-          <a class="social-icon">📷</a>
-        </div>
-      </div>
+    </footer>
 
-      <div class="footer-col">
-        <h5>Platform</h5>
-        <ul>
-          <li><a href="#">Search Items</a></li>
-          <li><a href="#">Report Lost</a></li>
-          <li><a href="#">Report Found</a></li>
-          <li><a href="#">Institutions</a></li>
-          <li><a href="#">Pricing</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h5>Company</h5>
-        <ul>
-          <li><a href="#">About Us</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">Careers</a></li>
-          <li><a href="#">Press</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h5>Support</h5>
-        <ul>
-          <li><a href="#">FAQ</a></li>
-          <li><a href="#">Contact Us</a></li>
-          <li><a href="#">Terms of Service</a></li>
-          <li><a href="#">Privacy Policy</a></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="footer-bottom">
-      <span>© 2025 FindBack Technologies. All rights reserved.</span>
-      <div class="footer-bottom-links">
-        <a href="#">Privacy</a>
-        <a href="#">Terms</a>
-        <a href="#">Cookies</a>
-      </div>
-    </div>
-  </div>
-</footer>
-
-<!-- ── CHATBOT ─────────────────────────────────── -->
-<button class="chatbot-trigger" id="chatbotTrigger" aria-label="Open chat assistant">
+    <!-- ── CHATBOT ─────────────────────────────────── -->
+    <button class="chatbot-trigger" id="chatbotTrigger" aria-label="Open chat assistant">
   💬
   <div class="chat-badge">1</div>
 </button>
 
-<div class="chatbot-window" id="chatbotWindow">
-  <div class="chat-header">
-    <div class="chat-avatar">🤖</div>
-    <div class="chat-header-info">
-      <h4>FindBot Assistant</h4>
-      <span>Online · Always here to help</span>
+    <div class="chatbot-window" id="chatbotWindow">
+        <div class="chat-header">
+            <div class="chat-avatar">🤖</div>
+            <div class="chat-header-info">
+                <h4>FindBot Assistant</h4>
+                <span>Online · Always here to help</span>
+            </div>
+            <button class="chat-close" id="chatClose">✕</button>
+        </div>
+
+        <div class="chat-messages" id="chatMessages"></div>
+
+        <div class="chat-quick-replies">
+            <button class="quick-reply">How to register</button>
+            <button class="quick-reply">Report lost item</button>
+            <button class="quick-reply">Retrieve my item</button>
+            <button class="quick-reply">Institution plans</button>
+        </div>
+
+        <div class="chat-input-row">
+            <input type="text" class="chat-input" id="chatInput" placeholder="Ask me anything…" />
+            <button class="chat-send" id="chatSend">➤</button>
+        </div>
     </div>
-    <button class="chat-close" id="chatClose">✕</button>
-  </div>
 
-  <div class="chat-messages" id="chatMessages"></div>
+    <div class="toast-container" id="toastContainer"></div>
 
-  <div class="chat-quick-replies">
-    <button class="quick-reply">How to register</button>
-    <button class="quick-reply">Report lost item</button>
-    <button class="quick-reply">Retrieve my item</button>
-    <button class="quick-reply">Institution plans</button>
-  </div>
-
-  <div class="chat-input-row">
-    <input type="text" class="chat-input" id="chatInput" placeholder="Ask me anything…" />
-    <button class="chat-send" id="chatSend">➤</button>
-  </div>
-</div>
-
-<div class="toast-container" id="toastContainer"></div>
-
-<script src="main.js"></script>
+    <script src="assets/script/script.js"></script>
 </body>
+
 </html>
